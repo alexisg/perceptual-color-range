@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: black;
+  color: white;
+  font-family: "Inter", system-ui;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: calc(20 / 13);
+  padding: 24px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 2;
+}
+
+img {
+  max-width: 100%;
+}
+
+.cols {
+  font-family: ui-monospace, "SF Mono", monospace;
+  display: grid;
+  grid-template-columns: 33% 33% 1fr;
+  grid-gap: 16px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 16px;
+  margin-top: 8px;
+}
+
+strong {
+  font-weight: 600;
+  display: inline-block;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.panel {
+  background: var(--grey14);
+  border-radius: 6px;
+  padding: 16px;
+  place-items: start stretch;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 280px));
+  justify-content: start;
+  width: 100%;
+}
+
+.card {
+  background: var(--grey12);
+  border-radius: 6px;
+  margin-top: 24px;
+  overflow: hidden;
+}
+
+.card__chin {
+  padding: 8px 12px 12px;
+}
+
+.card__title {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.card__deck {
+  font-size: 12px;
+  font-weight: 400;
+}
