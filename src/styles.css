@@ -1,6 +1,14 @@
+:root {
+  --bg-base: var(--grey00);
+  --bg-panel: var(--grey10);
+  --bg-primary: var(--grey12);
+  --bg-secondary: var(--grey15);
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -10,7 +18,7 @@ body {
   font-size: 13px;
   font-weight: 400;
   line-height: calc(20 / 13);
-  padding: 24px;
+  padding: 4px;
 }
 
 h1,
@@ -26,15 +34,15 @@ img {
 .cols {
   font-family: ui-monospace, "SF Mono", monospace;
   display: grid;
-  grid-template-columns: 33% 33% 1fr;
-  grid-gap: 16px;
+  grid-template-columns: 25% 25% 25% 1fr;
+  grid-gap: 2px;
+  padding: 16px;
 }
 
 .split {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-gap: 16px;
-  margin-top: 8px;
+  grid-gap: 2px;
 }
 
 strong {
@@ -46,7 +54,7 @@ strong {
 }
 
 .panel {
-  background: var(--grey14);
+  background: var(--bg-panel);
   border-radius: 6px;
   padding: 16px;
   place-items: start stretch;
@@ -58,7 +66,7 @@ strong {
 }
 
 .card {
-  background: var(--grey12);
+  background: var(--bg-primary);
   border-radius: 6px;
   margin-top: 24px;
   overflow: hidden;
@@ -66,6 +74,23 @@ strong {
 
 .card__chin {
   padding: 8px 12px 12px;
+}
+
+.card__meta {
+  background: var(--bg-secondary);
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 4px;
+}
+
+.old .panel {
+  background: var(--greyOld10);
+}
+.old .card {
+  background: var(--greyOld12);
+}
+.old .meta {
+  background: var(--greyOld15);
 }
 
 .card__title {
