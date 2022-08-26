@@ -1,0 +1,198 @@
+:root {
+  --bg-base: var(--grey00);
+  --bg-panel: var(--grey08);
+  --bg-primary: var(--grey12);
+  --bg-secondary: var(--grey15);
+  --text-primary: var(--greyA100);
+  --text-body: var(--greyA90);
+  --text-secondary: var(--greyA70);
+  --text-tertiary: var(--greyA60);
+}
+
+.bg-base{ 
+  background: var(--bg-base);
+  color: var(--bg-base);
+}
+.bg-panel{ 
+  background: var(--bg-panel);
+  color: var(--bg-panel);
+}
+.bg-primary{ 
+  background: var(--bg-primary);
+  color: var(--bg-primary);
+}
+.bg-secondary{ 
+  background: var(--bg-secondary);
+  color: var(--bg-secondary);
+}
+.text-primary{ 
+  background: var(--text-primary);
+  color: var(--text-primary);
+}
+.text-body{ 
+  background: var(--text-body);
+  color: var(--text-body);
+}
+.text-secondary{ 
+  background: var(--text-secondary);
+  color: var(--text-secondary);
+}
+.text-tertiary{ 
+  background: var(--text-tertiary);
+  color: var(--text-tertiary);
+}
+
+.layers div {
+  padding: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  color: white;
+  font-family: "Inter", system-ui;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: calc(20 / 13);
+  padding: 4px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 2;
+}
+
+img {
+  max-width: 100%;
+}
+
+.mg-b-24 {
+  margin-bottom: 24px;
+}
+
+.cols {
+  font-family: ui-monospace, "SF Mono", monospace;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-gap: 2px;
+  padding: 16px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 2px;
+  &--three {
+    grid-template-columns: 33% 33% 33%;
+  }
+  @media (max-width: 1024px) {
+    &--three {
+      grid-template-columns: 100%;
+    }
+   }
+}
+
+strong {
+  font-weight: 600;
+  display: inline-block;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.panel {
+  background: var(--bg-panel);
+  border-radius: 6px;
+  padding: 48px;
+  place-items: start stretch;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  justify-content: start;
+  width: 100%;
+}
+
+.card {
+  background: var(--bg-primary);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card__chin {
+  padding: 0px 12px 12px;
+}
+
+.card__meta {
+  background: var(--bg-secondary);
+  padding: 8px;
+  margin: 8px 0 0;
+  border-radius: 4px;
+  //hack will fix laterz
+  svg {
+    float: left;
+    margin-right: 4px;
+    position: relative;
+    top: 1px;
+  }
+}
+
+.old .panel {
+  background: var(--greyOld10);
+}
+.old .card {
+  background: var(--greyOld12);
+}
+.old .meta {
+  background: var(--greyOld15);
+}
+
+.v3 { 
+  .panel {
+    background: hsl(240, 13%, 10%);
+  }
+  .card {
+    background: hsl(234, 19%, 23%);
+    font-family: 'Nunito';
+  }
+  .card__title {
+    font-size: 14px;
+  }
+  .card__meta {
+    background: hsl(234, 19%, 28%);
+  }
+}
+
+.card__title {
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.card__deck {
+  color: var(--text-tertiary);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.chip {
+  border-radius: 24px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 24px;
+  padding: 0 8px;
+  margin: 4px 4px 0 0;
+  &--green {
+    background: hsla(156,100,35,.1);
+    color: hsl(156,100,35);
+  }
+  &--purple {
+    background: hsla(269,71,71,.1);
+    color: hsl(269,71,71);
+  }
+}
