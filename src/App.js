@@ -12,23 +12,24 @@ let chr = "10";
 
 const colors = [
   { value: [hue, 0, 0, 1], name: "grey00" },
-  { value: [hue, 8, 4, 1], name: "grey05" },
-  { value: [hue, 8, 6, 1], name: "grey08" },
-  { value: [hue, 8, 8, 1], name: "grey10" },
-  { value: [hue, 11, 16, 1], name: "grey12" },
-  { value: [hue, 12, 19, 1], name: "grey15" },
-  { value: [hue, 13, 23, 1], name: "grey20" },
-  { value: [hue, 13, 26, 1], name: "grey30" },
-  { value: [hue, 14, 36, 1], name: "grey40" },
-  { value: [hue, 14, 49, 1], name: "grey50" },
-  { value: [hue, 14, 59, 1], name: "grey60" },
-  { value: [hue, 12, 69, 1], name: "grey70" },
-  { value: [hue, 10, 79, 1], name: "grey80" },
-  { value: [hue, 8, 86, 1], name: "grey88" },
-  { value: [hue, 6.5, 89, 1], name: "grey90" },
-  { value: [hue, 4, 92, 1], name: "grey93" },
-  { value: [hue, 2, 95, 1], name: "grey95" },
-  { value: [hue, 1, 97, 1], name: "grey97" }
+  { value: [hue, 6, 3.8, 1], name: "grey05" },
+  { value: [hue, 8, 6.4, 1], name: "grey08" },
+  { value: [hue, 10, 10.4, 1], name: "grey10" },
+  { value: [hue, 11, 13.8, 1], name: "grey12" },
+  { value: [hue, 12, 17.4, 1], name: "grey15" },
+  { value: [hue, 12, 19.9, 1], name: "grey20" },
+  { value: [hue, 12, 30, 1], name: "grey30" },
+  { value: [hue, 14, 39.5, 1], name: "grey40" },
+  { value: [hue, 14, 49.4, 1], name: "grey50" },
+  { value: [hue, 14, 59.6, 1], name: "grey60" },
+  { value: [hue, 12, 70.2, 1], name: "grey70" },
+  { value: [hue, 10, 82.1, 1], name: "grey80" },
+  { value: [hue, 9, 86.4, 1], name: "grey88" },
+  { value: [hue, 7, 89.4, 1], name: "grey90" },
+  { value: [hue, 5, 92.4, 1], name: "grey93" },
+  { value: [hue, 3, 94.7, 1], name: "grey95" },
+  { value: [hue, 1.5, 96.6, 1], name: "grey97" },
+  { value: [hue, 0, 100, 1], name: "grey100" }
 ];
 
 const colorsOld = [
@@ -49,7 +50,8 @@ const colorsOld = [
   { value: [288.26, 7.81, 89.15], name: "greyOld90" },
   { value: [286.72, 5.17, 92.53], name: "greyOld93" },
   { value: [290.45, 3.59, 94.98], name: "greyOld95" },
-  { value: [290.29, 1.53, 96.61], name: "greyOld97" }
+  { value: [290.29, 1.53, 96.61], name: "greyOld97" },
+  { value: [290.29, 1.53, 100], name: "greyOld100" }
 ];
 
 // Greys No Saturation
@@ -71,7 +73,8 @@ const colorsNoSat = [
   { value: [hue, 0.5, 89, 1], name: "greyN90" },
   { value: [hue, 0, 92, 1], name: "greyN93" },
   { value: [hue, 0, 95, 1], name: "greyN95" },
-  { value: [hue, 0, 97, 1], name: "greyN97" }
+  { value: [hue, 0, 97, 1], name: "greyN97" },
+  { value: [hue, 0, 100, 1], name: "greyN100" }
 ];
 
 // Alpha Colors
@@ -114,60 +117,64 @@ function colorOutput(color, colorPrev, colorNext, i, colorName) {
           color: a11y(chromaHCL(color).hex())
         }}
       >
-        {colorName}
-        <p>
-          hsla(
-          {chromaHCL(color).get("hsl.h").toFixed(2)},
-          {(chromaHCL(color).get("hsl.s") * 100).toFixed(2)}%,
-          <b>{(chromaHCL(color).get("hsl.l") * 100).toFixed(2)}%,</b>
-          {chromaHCL(color).get("rgba.a")})
-        </p>
-        <p>
-          hcl(
-          {chromaHCL(color).get("hcl.h").toFixed(2)},
-          {chromaHCL(color).get("hcl.c").toFixed(2)},
-          <b>{chromaHCL(color).get("hcl.l").toFixed(2)}%)</b>
-        </p>
-        {/* <p>
-          rgba(
-          {chromaHCL(color).get("rgba.r")},{chromaHCL(color).get("rgba.g")},
-          {chromaHCL(color).get("rgba.b")},{chromaHCL(color).get("rgba.a")})
-        </p> */}
-        <p>{chromaHCL(color).hex()}</p>
+        {colorName}: 'rgba(
+        {chromaHCL(color).get("rgba.r")},{chromaHCL(color).get("rgba.g")},
+        {chromaHCL(color).get("rgba.b")},{chromaHCL(color).get("rgba.a")})',
+        <div class="toggle">
+          <p>
+            hsla(
+            {chromaHCL(color).get("hsl.h").toFixed(2)},
+            {(chromaHCL(color).get("hsl.s") * 100).toFixed(2)}%,
+            <b>{(chromaHCL(color).get("hsl.l") * 100).toFixed(2)}%,</b>
+            {chromaHCL(color).get("rgba.a")})
+          </p>
+          <p>
+            hcl(
+            {chromaHCL(color).get("hcl.h").toFixed(2)},
+            {chromaHCL(color).get("hcl.c").toFixed(2)},
+            <b>{chromaHCL(color).get("hcl.l").toFixed(2)}%)</b>
+          </p>
+          <p>{chromaHCL(color).hex()}</p>
+          <div className="split">
+            {colorPrev && (
+              <p>
+                Cntrst
+                <span role="img" aria-label="Point Up">
+                  ☝️
+                </span>
+                :
+                <strong>
+                  {chroma
+                    .contrast(
+                      chromaHCL(color).hex(),
+                      chromaHCL(colorPrev).hex()
+                    )
+                    .toFixed(3)}
+                </strong>
+              </p>
+            )}
 
-        <div className="split">
-          {colorPrev && (
-            <p>
-              DeltaE
-              <span role="img" aria-label="Point Up">
-                ☝️
-              </span>
-              :
-              <strong>
-                {chroma
-                  .distance(chromaHCL(color).hex(), chromaHCL(colorPrev).hex())
-                  .toFixed(3)}
-              </strong>
-            </p>
-          )}
+            {!colorPrev && <div></div>}
+            {!colorNext && <div></div>}
 
-          {!colorPrev && <div></div>}
-          {!colorNext && <div></div>}
-
-          {colorNext && (
-            <p>
-              DeltaE
-              <span role="img" aria-label="Point Down">
-                👇
-              </span>
-              :
-              <strong>
-                {chroma
-                  .distance(chromaHCL(color).hex(), chromaHCL(colorNext).hex())
-                  .toFixed(3)}
-              </strong>
-            </p>
-          )}
+            {colorNext && (
+              <p>
+                Cntrst
+                <span role="img" aria-label="Point Down">
+                  👇
+                </span>
+                :
+                <strong>
+                  {chroma
+                    .contrast(
+                      chromaHCL(color).hex(),
+                      chromaHCL(colorNext).hex()
+                    )
+                    .toFixed(3)}
+                </strong>
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </>
@@ -227,17 +234,17 @@ const colorListNoSat = colorsNoSat.map((color, i) => (
   </>
 ));
 
-// const colorListAlpha = colorsAlpha.map((color, i) => (
-//   <>
-//     {colorOutput(
-//       color.value,
-//       colorsAlpha[i - 1]?.value,
-//       colorsAlpha[i + 1]?.value,
-//       i,
-//       color.name
-//     )}
-//   </>
-// ));
+const colorListAlpha = colorsAlpha.map((color, i) => (
+  <>
+    {colorOutput(
+      color.value,
+      colorsAlpha[i - 1]?.value,
+      colorsAlpha[i + 1]?.value,
+      i,
+      color.name
+    )}
+  </>
+));
 
 export default function App() {
   return (
@@ -260,19 +267,19 @@ export default function App() {
 
         <div class="split split--three split--responsive mg-b-24">
           <div class="old">
-            Current
+            <h2>Current Greys</h2>
             <div className="panel">
               <Cards />
             </div>
           </div>
           <div>
-            Adjusted
+            <h2>Adjusted Greys</h2>
             <div className="panel">
               <Cards />
             </div>
           </div>
           <div class="v3">
-            V3
+            <h2>V3 Greys</h2>
             <div className="panel">
               <Cards />
             </div>
@@ -281,9 +288,13 @@ export default function App() {
 
         <div class="split">
           <div class="old">
+            <h2>Current Greys</h2>
             <Layers />
           </div>
-          <Layers />
+          <div>
+            <h2>Adjusted Greys</h2>
+            <Layers />
+          </div>
         </div>
 
         <div
@@ -327,7 +338,7 @@ export default function App() {
             {colorListNoSat}
           </div>
 
-          {/* <div
+          <div
             style={{
               padding: "32px",
               background: "var(--grey10)"
@@ -335,7 +346,7 @@ export default function App() {
           >
             <h2>Alpha Greys</h2>
             <div>{colorListAlpha}</div>
-          </div> */}
+          </div>
         </div>
       </div>
     </>
