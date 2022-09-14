@@ -93,7 +93,7 @@ body {
   font-weight: 400;
   line-height: calc(20 / 13);
   padding: 48px;
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -112,17 +112,33 @@ img {
   max-width: 100%;
 }
 
+button {
+  outline: none;
+  background: #5E52FF;
+  color: rgba(white,.9);
+  border: 0;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 0 0 24px 0;
+}
+
 .mg-b-24 {
   margin-bottom: 24px;
 }
 
-.hide { display: none;}
+.hide .hide__child { display: none;}
 
 .cols {
   font-family: ui-monospace, "SF Mono", monospace;
   display: grid;
   grid-template-columns: 33% 33% 33%;
   grid-gap: 2px;
+  &--two {
+    grid-template-columns: 50% 50%;
+  }
+  &--four {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
 }
 
 .split {
@@ -143,8 +159,6 @@ strong {
   font-weight: 600;
   display: inline-block;
   padding: 0 4px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.2);
 }
 
 .panel {
